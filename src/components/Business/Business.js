@@ -1,22 +1,10 @@
 import React from "react";
 import styles from "./Business.module.css";
 
-const business = {
-  imageSrc: "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
-  name: "Mama Margarita",
-  address: "3214 Pizza Street",
-  city: "Pizza Town",
-  state: "NY",
-  zipCode: "10101",
-  category: "Italian",
-  rating: 4.9,
-  reviewCount: 89,
-};
-
-const Business = () => (
+const Business = ({ business }) => (
   <div className={styles.Business}>
     <div className={styles.imageContainer}>
-      <img src={business.imageSrc} alt="Delicious Pizza" />
+      <img src={business.imageSrc} alt={business.name} />
     </div>
     <h2>{business.name}</h2>
     <div className={styles.BusinessInformation}>
