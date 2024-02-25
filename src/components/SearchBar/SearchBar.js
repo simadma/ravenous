@@ -23,6 +23,10 @@ const SearchBar = () => {
     setSortBy(sortByOption);
   };
 
+  const handleTermChange = ({ target }) => {
+    setTerm(target.value);
+  };
+
   const renderSortByOptions = () => (
     Object.keys(sortByOptions).map(
       sortByOption => {
@@ -48,7 +52,7 @@ const SearchBar = () => {
         <ul>{renderSortByOptions()}</ul>
       </div>
       <div className={styles.SearchBarFields}>
-        <input placeholder="Search Businesses" />
+        <input placeholder="Search Businesses" onChange={handleTermChange} />
         <input placeholder="Where?" />
       </div>
       <div className={styles.SearchBarSubmit}>
