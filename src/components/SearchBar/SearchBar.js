@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 
 const sortByOptions = {
@@ -8,6 +8,10 @@ const sortByOptions = {
 };
 
 const SearchBar = () => {
+  const [term, setTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const [sortBy, setSortBy] = useState("best_match");
+
   const renderSortByOptions = () => (
     Object.keys(sortByOptions).map(
       sortByOption => {
