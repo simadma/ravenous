@@ -32,8 +32,8 @@
   color: #D4CFCF;
 }
 
-.SearchBarSortOptions li:active,
-.SearchBarSortOptions li:active:hover {
+.SearchBarSortOptions li.active,
+.SearchBarSortOptions li.active:hover {
   border-bottom: 1px solid #F0C36C;
   color: #F0C36C;
 }
