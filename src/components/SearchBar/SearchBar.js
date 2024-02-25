@@ -12,11 +12,32 @@ const SearchBar = () => {
   const [location, setLocation] = useState("");
   const [sortBy, setSortBy] = useState("best_match");
 
+  const getSortByClass = sortByOption => {
+    if (sortBy === sortByOption) {
+      return styles.active;
+    }
+    return "";
+  };
+
+  const handleSortByChange = sortByOption => {
+    setSortBy(sortByOption);
+  };
+
   const renderSortByOptions = () => (
     Object.keys(sortByOptions).map(
       sortByOption => {
         let sortByOptionValue = sortByOptions[sortByOption];
-        return <li key={sortByOptionValue}>{sortByOption}</li>;
+        return (
+          <li
+            className={getSortByClass(sortByOptionValue)}
+            key={sortByOptionValue}
+            onClick={() => {
+              handleSortByChange(sortByOptionValue);
+            }}
+          >
+            {sortByOption}
+          </li>
+        );
       }
     )
   );
